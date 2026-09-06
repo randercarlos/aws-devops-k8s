@@ -1,12 +1,12 @@
 # ============================================================================
 # UI SERVICE - CUSTOM VALUES
 # ============================================================================
- 
+
 # ----------------------------------------------------------------------------
 # IMAGE CONFIGURATION
 # ----------------------------------------------------------------------------
 image:
-  repository: 272039464286.dkr.ecr.us-east-1.amazonaws.com/retail-store/ui
+  repository: 095355901849.dkr.ecr.us-east-1.amazonaws.com/retail-store/ui
   pullPolicy: IfNotPresent
   tag: sha-4692a1c
 
@@ -63,7 +63,7 @@ autoscaling:
 # ----------------------------------------------------------------------------
 # KARPENTER NODE SELECTION
 # ----------------------------------------------------------------------------
-# Schedule pods on Karpenter On-Demand nodes for stability
+# Schedule pods on Karpenter Spot nodes (cost savings)
 nodeSelector:
   karpenter.sh/capacity-type: spot
 
@@ -104,4 +104,4 @@ podDisruptionBudget:
 
 opentelemetry:
   enabled: true
-  instrumentation: "default-instrumentation"  
+  instrumentation: "default-instrumentation"
